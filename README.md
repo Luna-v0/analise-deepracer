@@ -1,80 +1,52 @@
-# Generic ML
+# Analise DeepRacer
 
-This is a generic machine learning repository that can be used as a template for your own projects.
+Esse repositório é dedicado aos alunos de INF2070 para se abtuarem com o deepracer-utils, uma biblioteca Python que facilita a analise de modelos do AWS DeepRacer.
 
-## How to use this template
 
-1.  **Clone this repository:**
+## Setup
 
-    ```bash
-    git clone https://github.com/el-tocino/generic-ml <your-project-name>
-    ```
+Não é necessário usar o **uv** mas é recomendado. Se quiser instalar use:
 
-2.  **Rename the package:**
-
-    Rename the `generic_ml` directory to the name of your project's package.
-
-3.  **Update `pyproject.toml`:**
-
-    Change the `name` in `pyproject.toml` to match your project's name.
-
-4.  **Update `mkdocs.yml`:**
-
-    Update the `site_name`, `site_url`, `repo_name`, and `repo_url` to match your project's information.
-
-## Getting Started
-
-1.  **Create and activate the virtual environment:**
-
-    ```bash
-    uv venv
-    source .venv/bin/activate
-    ```
-
-2.  **Install dependencies:**
-
-    ```bash
-    uv sync
-    ```
-
-## Running the main file
-
-To run the `main.py` file, you can use `uv run`:
-
-```bash
-uv run generic_ml/main.py
+**Windows:**
+```powersheel
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-## Using the package
-
-To use the package in your own code, you can import it like this:
-
-```python
-import generic_ml
-
-# Your code here
+**Linux/MacOS:**
+```bash
+curl -sSL https://astral.sh/uv/install.sh | bash
 ```
 
-## Testing
+### Usando UV
 
-This project uses `pytest` for testing. To run the tests, use `uv run`:
-
+**Instale as dependências do projeto:**
 ```bash
-uv run pytest
+uv sync
+```
+**Execurtando o projeto**
+```bash
+uv run --with jupyter jupter lab
 ```
 
-## Documentation
-
-This project uses `mkdocs` for documentation. To build and serve the documentation locally, run:
-
+### Sem usar UV
+**Crie um ambiente virtual:**
 ```bash
-uv run mkdocs serve
+python -m venv venv
 ```
-
-This command will start a local server and automatically rebuild the documentation when you make changes.
-
-To build the static documentation site, run:
-
+**Ative o ambiente virtual:**
+- Windows:
+```powershell
+.\venv\Scripts\activate
+```
+- Linux/MacOS:
 ```bash
-uv run mkdocs build
+source venv/bin/activate
+```
+**Instale as dependências do projeto:**
+```bash
+pip install -r requirements.txt
+```
+**Inicie o Jupyter Lab:**
+```bash
+jupyter lab
 ```
